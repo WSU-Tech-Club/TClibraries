@@ -14,7 +14,7 @@ class TCnetObjTCP
 private:
 	unsigned int port;
 	IPaddress *myIP, *remoteIP;
-	string remoteIPv4;
+	string remoteHost;
 	TCPsocket sock;
 	
 	bool talkative;
@@ -29,8 +29,8 @@ public:
 
 	int connect();
 
-	void send(string message);
-	string receive();
+	int send(string message);
+	string receive(bool wait);
 
 
 };
