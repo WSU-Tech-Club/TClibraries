@@ -5,17 +5,18 @@
 
 using std::string;
 
-class Button
+class Button : public TCwidget
 {
 private:
-	SDL_Rect *rect;
 	SDL_Surface* image[2];
 	int isPressed;
 	bool lock;
+
 public:
 	Button(string baseImageName, int x, int y, int width, int height);
 
 	void display(SDL_Surface* screen);
+	void handleInput(SDL_Event event);
 
 	bool wasClicked(int clickX, int clickY);
 	bool isClicked();

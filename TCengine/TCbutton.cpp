@@ -1,7 +1,7 @@
-#include "button.h"
+#include "TCbutton.h"
 
 
-Button::Button( string baseImageName, int x, int y, int width, int height)
+Button::Button( string baseImageName, int x, int y, int width, int height) : TCwidget()
 {
 	string temp;
 	rect = newRect(x,y,width,height);
@@ -64,6 +64,14 @@ void Button::setClick( bool nPress )
 void Button::Lock()
 {
 	lock = true;
+}
+
+void Button::handleInput( SDL_Event event )
+{
+	if(event->type == SDL_MOUSEBUTTONUP)
+	{
+		wasClicked(event->button.x,event->button.y)';
+	}
 }
 
 

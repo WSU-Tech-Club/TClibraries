@@ -17,7 +17,6 @@ TCnetObjTCP::TCnetObjTCP(bool verbose = false)
 	}
 	port = -1;
 	remoteHost = "";
-
 	talkative = verbose;
 }
 
